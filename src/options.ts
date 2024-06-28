@@ -32,6 +32,7 @@ export function getOptionsConfig(configParser: any): {
       description: 'A list of directories to create barrels for.',
       default: ['./'],
     },
+
     V: {
       type: 'boolean',
       alias: 'verbose',

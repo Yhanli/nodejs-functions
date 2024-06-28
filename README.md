@@ -25,8 +25,8 @@ npm install nodejs-functions
 ```javascript
 import { app } from 'nodejs-functions';
 
-app.ScheduledTask('* * * * * *', () => {
-  console.log(`trigger every second ${new Date().toISOString()}`);
+app.ScheduledTask('ScheduledFunction1', '* * * * * *', () => {
+  console.log(`send 1 ${new Date().toISOString()}`);
 });
 ```
 
@@ -39,14 +39,15 @@ function send2() {
   console.log(`send 2 ${new Date().toISOString()}`);
 }
 
-app.ScheduledTask('* * * * * *', send2);
+app.ScheduledTask('ScheduledFunction2', '* * * * * *', send2);
 ```
 
 ## Configure Function Directories using `.nfunc.json`
 
 ```json
 {
-  "directory": ["dist/test"]
+  "directory": ["dist/test"],
+  "ScheduledFunction1_DISABLE": true
 }
 ```
 

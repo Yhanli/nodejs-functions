@@ -5,4 +5,4 @@ function send2() {
   console.log(`send 2 ${new Date().toISOString()}`);
 }
 
-app.ScheduledTask('* * * * * *', send2);
+app.ScheduledTask('ScheduledFunction2', '* * * * * *', send2);
