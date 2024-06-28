@@ -51,6 +51,25 @@ app.ScheduledTask('ScheduledFunction2', '* * * * * *', send2);
 }
 ```
 
+## How it run the function
+
+- checkout [.nfunc.json](.nfunc.json), [example.ts](./src/example/example.ts) and [example_2.ts](./src/example/example_2.ts)
+
+Both file will later build to the `dist` folder which then give the path
+
+1. ./dist/example/example.js
+2. ./dist/example/example_2.js
+
+Use the `.nfunc.json` to set the directory to `dist/example` folder and it will load every function inside individually.
+
+The command below can be use to execute the functions
+
+```bash
+npx nfunc --config .nfunc.json
+
+# recommended to have it in package.json script instead
+```
+
 ## Future Features
 
 - Queue trigger
